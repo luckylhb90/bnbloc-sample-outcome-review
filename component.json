@@ -1,0 +1,25 @@
+{
+  "kind": "bnbloc.room.package/v1",
+  "name": "outcome-review",
+  "version": "0.1.0",
+  "displayName": "Outcome review (sample)",
+  "description": "A sample room: each day it reads your organization's agent conversations (with your admin's consent) and tells you which ones did not get the member what they wanted, and what might have helped. Copy it and make it yours.",
+  "category": "samples",
+  "tags": ["sample", "review"],
+  "welcome": "This room is a starting point, not a fixed tool. It needs your organization admin's consent to read conversations. Then turn on its daily task, or ask here for anything else: change what it looks at, how it reports, or have an agent build a table for it.",
+  "quickPrompts": [
+    { "title": "Review yesterday now", "prompt": "Read yesterday's conversations and tell me which ones did not get the member what they wanted, and what might have helped." },
+    { "title": "Change the daily report", "prompt": "I want the daily review to work differently: " }
+  ],
+  "schedules": [
+    {
+      "text": "Read the organization's agent conversations from the last day. For each one, say in a sentence what the member wanted and whether they got it. Then post a short summary here: the ones that did not work out first, why, and what might have helped (a tool, a file, another agent or person, a fix). Keep it brief and plain.",
+      "recipient": { "kind": "ai" },
+      "recurrence": { "kind": "daily", "time": "09:00" },
+      "timezone": "UTC"
+    }
+  ],
+  "sources": [
+    { "name": "runs", "purpose": "See which agent conversations did not get the member what they wanted, so the organization can learn what to fix or add." }
+  ]
+}
